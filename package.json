@@ -1,0 +1,21 @@
+{
+  "name": "express-graphql-starterpack",
+  "version": "1.0.0",
+  "description": "A starter pack for getting an Express.js and GraphQL application running quickly.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2"
+  },
+  "resolutions": {
+    "graphql": "^0.13.0"
+  }
+}
