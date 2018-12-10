@@ -2,7 +2,7 @@
 
 A basic setup for an Express.js project utilizing GraphQL.
 
-This project accompanies the Medium article, Using GraphQL and Node.js to Make a Basic Chat App.
+This project accompanies the Medium article, [Using GraphQL and Node.js to Make a Basic Chat App](https://medium.com/@mr.burkes/using-graphql-and-node-js-to-make-a-basic-chat-app-1ed2e6a7a6d3).
 
 ## Getting started
 
