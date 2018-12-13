@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-    res.send('We\'re in business');
+    res.sendFile('./index.html', { root: __dirname });
 });
 
 app.use('/api', graphqlHTTP({
@@ -23,6 +23,5 @@ app.use('/api', graphqlHTTP({
 }));
 
 app.listen(8000, () => {
-    console.log(app.stack);
-    console.log('App is listening');
+    console.log('App is listening on http://localhost:8000/');
 });

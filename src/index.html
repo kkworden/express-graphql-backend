@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <b>Nickname:</b>
+    <input id="nickname" type="text" size="20" />
+
+    <b>Message:</b>
+    <input id="message" type="text" size="75" />
+
+    <button id="send">Send message</button>
+
+    <div id="messages"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Retrieving messages
+        function getChatroom() {
+            $.post('/api', { query: '{ messages }' }, function(data) {
+                var str = '';
+                for (var message of data.data.messages) {
+                    str += `${message}<br />`;
+                }
+
+                $('#messages').html(str);
+            });
+        }
+
+        setInterval(function() {
+            getChatroom();
+        }, 2000);
+
+        // Sending messages
+        function sendMessage(nickname, message) {
+            if (!nickname || nickname == '') {
+                nickname = '(nobody)';
+            }
+
+            $.post('/api', { query: `mutation { sendMessage(nickname: "${nickname}", message: "${message}")}`}, getChatroom);
+        }
+
+        $('#send').click(function() {
+            var nickname = $('#nickname').val();
+            var message = $('#message').val();
+            sendMessage(nickname, message);
+            $('#message').val('');
+        });
+    </script>
+</html>
