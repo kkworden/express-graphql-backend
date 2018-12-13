@@ -1,4 +1,4 @@
-# express-graphql-starterpack
+# express-graphql-chat
 
 A basic setup for an Express.js project utilizing GraphQL.
 
